@@ -17,19 +17,31 @@ use Symfony\Component\HttpFoundation\Request;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/default', function () {
-    return view('pages.default');
+Route::get('/about-us', function () {
+    return view('about-us');
 });
 
-Route::get('/about-us', [mainController::class, 'about-us']);
+Route::get('/projects', function () {
+    return view('projects');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+// Route::get('/default', function () {
+//     return view('pages.default');
+// });
+
+// Route::get('/about-us', [mainController::class, 'about-us']);
 
 //routes and response
-Route::get('/sample/{id}', function ($id) {
-    return response($id. " ".'<-wildcard value');
-});
+// Route::get('/sample/{id}', function ($id) {
+//     return response($id. " ".'<-wildcard value');
+// });
 
 // Route::get('/search', function (Request $request) {
 //     return ($request->name ." ". $request->pet);
