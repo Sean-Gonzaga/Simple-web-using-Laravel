@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\mainController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProjectController;
 use Symfony\Component\HttpFoundation\Request;
 
 /*
@@ -16,37 +17,17 @@ use Symfony\Component\HttpFoundation\Request;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', [MainController::class, 'home'])->name('home');
 
-Route::get('/about-us', function () {
-    return view('about-us');
-});
+Route::get('/products', [MainController::class, 'products'])->name('products');
 
-Route::get('/projects', function () {
-    return view('projects');
-});
+Route::get('/projects', [MainController::class, 'projects'])->name('projects');
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/projects/banana-plantation', [MainController::class, 'banana_plantation'])->name('banana-plantation');
 
-// Route::get('/default', function () {
-//     return view('pages.default');
-// });
+Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 
-// Route::get('/about-us', [mainController::class, 'about-us']);
+Route::get('/about-us', [MainController::class, 'about_us'])->name('about-us');
 
-//routes and response
-// Route::get('/sample/{id}', function ($id) {
-//     return response($id. " ".'<-wildcard value');
-// });
 
-// Route::get('/search', function (Request $request) {
-//     return ($request->name ." ". $request->pet);
-// });
 
-// Route::get('/products', [ProductController::class,'index'])->name('products');
-
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
