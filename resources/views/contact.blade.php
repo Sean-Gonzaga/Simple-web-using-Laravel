@@ -1,4 +1,4 @@
-@extends('default')
+@extends('template.default')
 
 @section('content')
     <!-- Contact-->

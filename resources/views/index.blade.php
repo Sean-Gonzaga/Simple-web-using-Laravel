@@ -5,7 +5,7 @@
     <p>{{ $item['desc'] }}</p>
 @endforeach --}}
 
-@extends('default')
+@extends('template.default')
 
 @section('content')
     <!-- Masthead-->

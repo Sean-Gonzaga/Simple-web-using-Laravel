@@ -38,8 +38,6 @@ class MainController extends Controller
      
         return view('projects',
             [
-                'title'          =>  'Projects',
-                'info'           =>  'Project_info',
                 'project_info'   => Projects::all()
             ]
         );
@@ -50,8 +48,6 @@ class MainController extends Controller
     {
         return view('products',
             [
-                'title'          =>  'Products',
-                'info'           =>  'Product_info',
                 'product_info'   => Products::all()
             ]
         );
