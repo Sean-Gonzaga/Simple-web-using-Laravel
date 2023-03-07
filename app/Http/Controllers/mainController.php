@@ -4,39 +4,38 @@ namespace App\Http\Controllers;
 
 use App\Models\Products;
 use App\Models\Projects;
-use Illuminate\Http\Request;
 
 
 class MainController extends Controller
 {
     public function home()
     {
-        return view('index');
+        return view('main.index');
 
     }
 
-    public function banana_plantation()
-    {
-        return view('banana-plantation');
+    // public function banana_plantation()
+    // {
+    //     return view('banana-plantation');
 
-    }
+    // }
 
     public function contact()
     {
-        return view('contact');
+        return view('main.contact');
 
     }
 
     public function about_us()
     {
-        return view('about-us');
+        return view('main.about-us');
 
     }
    
     public function projects()
     {
      
-        return view('projects',
+        return view('main.projects',
             [
                 'project_info'   => Projects::all()
             ]
@@ -46,7 +45,7 @@ class MainController extends Controller
 
     public function products()
     {
-        return view('products',
+        return view('main.products',
             [
                 'product_info'   => Products::all()
             ]
